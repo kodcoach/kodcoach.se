@@ -1,17 +1,10 @@
-import * as React from "react";
+import Head from 'next/head';
+import Layout from '../components/Layout/Layout';
+import '../styles/globals.css';
 
-import PropTypes from "prop-types";
-import Head from "next/head";
-
-import "../styles/globals.css";
-
-import Dashboard from "../components/views/Dashboard";
-
-export default function MyApp(props) {
-  const { Component, pageProps } = props;
-
+export default function App({ Component, pageProps }) {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>Kodcocach</title>
         <meta
@@ -19,13 +12,9 @@ export default function MyApp(props) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-
-      <Dashboard />
-    </React.Fragment>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
