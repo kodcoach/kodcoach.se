@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import "../styles/globals.css";
 
-import Dashboard from "../src/views/Dashboard";
+import Dashboard from "../components/views/Dashboard";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
