@@ -1,24 +1,26 @@
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types';
-import Head from 'next/head';
+import PropTypes from "prop-types";
+import Head from "next/head";
 
-import '../styles/globals.css' 
+import "../styles/globals.css";
 
-import Dashboard from '../src/views/Dashboard';
+import Dashboard from "../src/views/Dashboard";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
   return (
-    <React.Fragment> 
+    <React.Fragment>
       <Head>
         <title>Kodcocach</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
-      
+
       <Dashboard />
-    
     </React.Fragment>
   );
 }
