@@ -14,7 +14,7 @@ export default function Index({ mentors }) {
   return (
     <>
       <p>En dashboard på mentor/studenter?</p>
-      <p>{JSON.stringify(mentors[0])}</p>
+      <code>{JSON.stringify(mentors)}</code>
     </>
   );
 }
