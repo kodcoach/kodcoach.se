@@ -4,8 +4,17 @@ name: Example
 # Description
 description: Example
 
+# Your avatar/image
+avatar:
+
+# List of what you teach
+teaches: JavaScript, CSS, HTML
+
 # Link to Twitter
 twitter: https://twitter.com/example
 
 # Link to your website
 website: https://exmaple.com
+
+# GitHub link
+github: https://github.com/example
