@@ -16,8 +16,8 @@ export default function Index({ mentors }) {
       <h1 className="text-center text-4xl">Mentorlista</h1>
 
       <div className="flex flex-wrap -m-4 mt-8">
-        {mentors.map((mentor) => (
-          <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        {mentors.map((mentor, i) => (
+          <div key={i} className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <div className="border border-gray-200 p-6 rounded-lg">
               <img
                 className="rounded-full"
