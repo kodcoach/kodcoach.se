@@ -4,7 +4,7 @@
 
 body {
     color: var(--theme-color-text,#2d3748);
-    background-color: var(--theme-color-background,#fff);
+    background-color: var(--theme-color-background,#F9FAFB);
 
     margin: 0px;
     font-weight: 400;

@@ -1,6 +1,6 @@
 name: Marcus Tisäter
 description: Front-end developer, open source enthusiast and meetup organizer.
 avatar: https://avatars.githubusercontent.com/u/2952332?s=460&u=88e98ed111141760908174dd08e5f978a454be8d&v=4
-teaches: Javascript, CSS, HTML
+teaches: ['Javascript', 'CSS', 'HTML']
 website: https://marcustisater.me
 twitter: https://twitter.com/marcustister
