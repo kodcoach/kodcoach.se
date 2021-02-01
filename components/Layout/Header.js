@@ -10,8 +10,10 @@ const Header = () => {
             Hur funkar det?
           </a>
         </nav>
-        <button className="inline-flex items-center text-gray-700 border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5
-          bg-green-300 hover:bg-green-400 transition-colors">
+        <button
+          className="inline-flex items-center text-gray-700 border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5
+          bg-green-300 hover:bg-green-400 transition-colors"
+        >
           Anmäl dig som mentor!
         </button>
       </div>

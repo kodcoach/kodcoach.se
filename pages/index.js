@@ -1,3 +1,4 @@
+import Head from '../components/Head';
 import { getAllMentors } from '../lib/mentors';
 
 export async function getStaticProps() {
@@ -13,6 +14,7 @@ export async function getStaticProps() {
 export default function Index({ mentors }) {
   return (
     <>
+      <Head title="Kodcoach" url="https://kodcoach.se/" />
       <div className="max-w-screen-sm mx-auto my-8 md:my-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
