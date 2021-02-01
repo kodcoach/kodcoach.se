@@ -21,7 +21,7 @@ export default function Index({ mentors }) {
             Utvecklare till utvecklare.
           </span>
         </h1>
-        <p className="text-center text-md sm:text-lg md:text-xl text-gray-500 font-light">
+        <p className="text-center text-md sm:text-lg font-mono tracking-tight">
           Erfarna utvecklare som gärna delar med sig av sina erfarenheter, sin
           kunskap & ger rådgivning till andra utvecklare som vill växa.
         </p>
@@ -31,15 +31,15 @@ export default function Index({ mentors }) {
         {mentors.map((mentor, i) => (
           <div
             key={i}
-            className="bg-white shadow-xl p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
+            className="bg-custom shadow-xl p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
           >
-            <img
+            <img 
               className="rounded-full mx-auto mb-3 -mt-1"
               width="80"
               height="80"
               src={mentor.avatar}
             />
-            <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
+            <h2 className="text-lg font-medium title-font mb-2">
               {mentor.name}
             </h2>
             <p className="leading-relaxed text-base font-light">
@@ -51,7 +51,7 @@ export default function Index({ mentors }) {
                 .map((teach, i) => (
                   <li
                     key={i}
-                    className="px-2 py-1 mr-2 mt-2 text-xs leading-none text-gray-800 bg-purple-100 rounded-full"
+                    className="px-2 py-1 mr-2 mt-2 text-xs leading-none text-gray-800 bg-purple-100 rounded-full font-mono tracking-tight"
                   >
                     {teach}
                   </li>

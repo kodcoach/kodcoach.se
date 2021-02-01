@@ -3,21 +3,28 @@
 @tailwind utilities; 
 
 body {
-    color: var(--theme-color-text,#2d3748);
-    background-color: var(--theme-color-background,#F9FAFB);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    color: var(--theme-color-text,#cbd4d9);
+    background-color: var(--theme-color-background,#090c15);
 
     margin: 0px;
     font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
-
+ 
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-    font-family: 'PT Serif';
-    font-weight: 700;
+    font-weight: 700; 
     margin-bottom: 1rem;
+}
+
+/* to be refactored */ 
+.bg-custom {
+    background-color: rgb(24 24 25);
 }
