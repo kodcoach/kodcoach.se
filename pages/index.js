@@ -13,13 +13,13 @@ export async function getStaticProps() {
 export default function Index({ mentors }) {
   return (
     <>
-      <div class="max-w-screen-sm mx-auto my-8 md:my-12">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
+      <div className="max-w-screen-sm mx-auto my-8 md:my-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
             Utvecklare till utvecklare.
           </span>
         </h1>
-        <p class="text-center text-md sm:text-lg md:text-xl text-gray-500 font-light">
+        <p className="text-center text-md sm:text-lg md:text-xl text-gray-500 font-light">
           Erfarna utvecklare som gärna delar med sig av sina erfarenheter, sin
           kunskap & ger rådgivning till andra utvecklare som vill växa.
         </p>
@@ -43,13 +43,13 @@ export default function Index({ mentors }) {
             <p className="leading-relaxed text-base font-light">
               {mentor.description}
             </p>
-            <ul class="flex flex-grow flex-wrap content-end">
+            <ul className="flex flex-grow flex-wrap content-end">
               {mentor.teaches
                 .sort((a, b) => a.localeCompare(b))
                 .map((teach, i) => (
                   <li
                     key={i}
-                    class="px-2 py-1 mr-2 mt-2 text-xs leading-none text-gray-800 bg-purple-100 rounded-full"
+                    className="px-2 py-1 mr-2 mt-2 text-xs leading-none text-gray-800 bg-purple-100 rounded-full"
                   >
                     {teach}
                   </li>
