@@ -10,8 +10,8 @@ const Header = () => {
           </a>
         </Link>
         <nav className="flex-grow flex flex-wrap items-center text-base my-auto">
-          <Link href="/hur-fungerar-det" className="hover:text-gray-700">
-            Hur fungerar det?
+          <Link href="/hur-fungerar-det">
+            <a className="hover:text-gray-700">Hur fungerar det?</a>
           </Link>
         </nav>
         <button
