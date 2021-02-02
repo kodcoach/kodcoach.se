@@ -29,6 +29,7 @@ export default function Index({ mentors }) {
   if (query.search) {
     sortedMentors = sortedMentors.filter(
       (mentor) =>
+        mentor.name.toLowerCase().indexOf(query.search) !== -1 ||
         mentor.description.toLowerCase().indexOf(query.search) !== -1 ||
         !!mentor.skills.find(
           (t) => t.toLowerCase().indexOf(query.search) !== -1
