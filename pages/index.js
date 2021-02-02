@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import Head from '../components/Head';
+import Select from '../components/Select';
 import { getAllMentors } from '../lib/mentors';
+import { flatten } from '../lib/utils';
 
 export async function getStaticProps() {
   const mentors = getAllMentors();
@@ -12,9 +15,63 @@ export async function getStaticProps() {
 }
 
 export default function Index({ mentors }) {
+  const [query, setQuery] = useState({ teaches: '', search: '' });
+
+  let sortedMentors = mentors;
+
+  if (query.teaches) {
+    sortedMentors = sortedMentors.filter(
+      (mentor) =>
+        !!mentor.teaches.find(
+          (t) => t.toLowerCase().indexOf(query.teaches) !== -1
+        )
+    );
+  }
+
+  if (query.search) {
+    sortedMentors = sortedMentors.filter(
+      (mentor) =>
+        mentor.description.toLowerCase().indexOf(query.search) !== -1 ||
+        !!mentor.teaches.find(
+          (t) => t.toLowerCase().indexOf(query.search) !== -1
+        )
+    );
+  }
+
+  const teaches = Array.from(
+    new Set(flatten(mentors.map((m) => m.teaches)))
+  ).map((t) => ({ value: t.toLowerCase(), label: t }));
+
   return (
     <>
       <Head title="Kodcoach" url="https://kodcoach.se/" />
+
+      <div className="flex justify-between">
+        <div className="w-full lg:w-1/2">
+          <Select
+            label="Teaches"
+            key="teaches"
+            options={teaches}
+            placeholder="Select teaches..."
+            value={query.teaches}
+            onChange={(value) => setQuery({ ...query, teaches: value })}
+          />
+        </div>
+        <div className="w-full lg:w-1/2">
+          <input
+            id="search"
+            className="w-full"
+            type="search"
+            aria-label="Search"
+            placeholder="Search..."
+            defaultValue={query.search}
+            onChange={(event) =>
+              setQuery({ ...query, search: event.target.value })
+            }
+          />
+        </div>
+      </div>
+
       <div className="max-w-screen-sm mx-auto my-8 md:my-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
@@ -28,12 +85,12 @@ export default function Index({ mentors }) {
       </div>
 
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        {mentors.map((mentor, i) => (
+        {sortedMentors.map((mentor, i) => (
           <div
             key={i}
             className="bg-custom shadow-xl p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
           >
-            <img 
+            <img
               className="rounded-full mx-auto mb-3 -mt-1"
               width="80"
               height="80"
