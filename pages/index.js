@@ -15,16 +15,14 @@ export async function getStaticProps() {
 }
 
 export default function Index({ mentors }) {
-  const [query, setQuery] = useState({ teaches: '', search: '' });
+  const [query, setQuery] = useState({ skill: '', search: '' });
 
   let sortedMentors = mentors;
 
-  if (query.teaches) {
+  if (query.skill) {
     sortedMentors = sortedMentors.filter(
       (mentor) =>
-        !!mentor.teaches.find(
-          (t) => t.toLowerCase().indexOf(query.teaches) !== -1
-        )
+        !!mentor.skills.find((t) => t.toLowerCase().indexOf(query.skill) !== -1)
     );
   }
 
@@ -32,14 +30,14 @@ export default function Index({ mentors }) {
     sortedMentors = sortedMentors.filter(
       (mentor) =>
         mentor.description.toLowerCase().indexOf(query.search) !== -1 ||
-        !!mentor.teaches.find(
+        !!mentor.skills.find(
           (t) => t.toLowerCase().indexOf(query.search) !== -1
         )
     );
   }
 
-  const teaches = Array.from(
-    new Set(flatten(mentors.map((m) => m.teaches)))
+  const skills = Array.from(
+    new Set(flatten(mentors.map((m) => m.skills)))
   ).map((t) => ({ value: t.toLowerCase(), label: t }));
 
   return (
@@ -49,12 +47,12 @@ export default function Index({ mentors }) {
       <div className="flex justify-between">
         <div className="w-full lg:w-1/2">
           <Select
-            label="Teaches"
-            key="teaches"
-            options={teaches}
-            placeholder="Select teaches..."
-            value={query.teaches}
-            onChange={(value) => setQuery({ ...query, teaches: value })}
+            label="skills"
+            key="skills"
+            options={skills}
+            placeholder="Select skill"
+            value={query.skill}
+            onChange={(value) => setQuery({ ...query, skill: value })}
           />
         </div>
         <div className="w-full lg:w-1/2">
@@ -63,7 +61,7 @@ export default function Index({ mentors }) {
             className="w-full"
             type="search"
             aria-label="Search"
-            placeholder="Search..."
+            placeholder="Search"
             defaultValue={query.search}
             onChange={(event) =>
               setQuery({ ...query, search: event.target.value })
@@ -103,7 +101,7 @@ export default function Index({ mentors }) {
               {mentor.description}
             </p>
             <ul className="flex flex-grow flex-wrap content-end">
-              {mentor.teaches
+              {mentor.skills
                 .sort((a, b) => a.localeCompare(b))
                 .map((teach, i) => (
                   <li

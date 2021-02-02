@@ -7,8 +7,8 @@ description: Example
 # Your avatar/image
 avatar:
 
-# List of what you teach
-teaches: JavaScript, CSS, HTML
+# List of your skills
+skills: ['JavaScript', 'CSS', 'HTML']
 
 # Link to Twitter
 twitter: https://twitter.com/example
