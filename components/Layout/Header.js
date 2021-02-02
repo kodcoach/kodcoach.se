@@ -4,9 +4,11 @@ const Header = () => {
   return (
     <header className="text-white">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="font-mono font-bold text-xl text-gray-900 uppercase mb-4 md:mb-0 md:mr-5">
-          <span className="text-indigo-600">Kod</span>Coach
-        </a>
+        <Link href="/">
+          <a className="font-mono font-bold text-xl text-gray-900 uppercase mb-4 md:mb-0 md:mr-5">
+            <span className="text-indigo-600">Kod</span>Coach
+          </a>
+        </Link>
         <nav className="flex-grow flex flex-wrap items-center text-base my-auto">
           <Link href="/hur-fungerar-det" className="hover:text-gray-700">
             Hur fungerar det?

@@ -1,16 +1,23 @@
+import Link from 'next/link';
 import CookieConsent from 'react-cookie-consent';
 
 const Footer = () => {
   return (
     <footer className="body-font">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a className="font-mono font-bold text-xl text-gray-900 uppercase mb-4 md:mb-0 md:mr-2">
-          <span className="text-indigo-600">Kod</span>Coach
-        </a>
+        <Link href="/">
+          <a className="font-mono font-bold text-xl text-gray-900 uppercase mb-4 md:mb-0 md:mr-2">
+            <span className="text-indigo-600">Kod</span>Coach
+          </a>
+        </Link>
         <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © {new Date().getFullYear()} Kodcoach —
           <span className="ml-1">
-            Skapad och förvaltad av @frozzare, @sanlin och @marcustisater
+            Skapad och förvaltad av{' '}
+            <a href="http://frozzare.com" className="hover:underline">
+              @frozzare
+            </a>
+            , @sanlin och @marcustisater
           </span>
         </p>
       </div>
