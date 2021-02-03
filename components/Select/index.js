@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import ReactSelect from 'react-select';
 
 export default function Select({
   label,
@@ -10,7 +10,7 @@ export default function Select({
 }) {
   const selected = options.filter((o) => o.value === value).pop();
   return (
-    <Select
+    <ReactSelect
       aria-label={label}
       placeholder={placeholder}
       value={selected}
