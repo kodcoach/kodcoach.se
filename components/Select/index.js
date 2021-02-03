@@ -1,7 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
 
-export default ({ label, onChange, options, placeholder, value }) => {
+export default function Select({
+  label,
+  onChange,
+  options,
+  placeholder,
+  value,
+}) {
   const selected = options.filter((o) => o.value === value).pop();
   return (
     <Select
@@ -14,4 +20,4 @@ export default ({ label, onChange, options, placeholder, value }) => {
       options={options}
     />
   );
-};
+}
