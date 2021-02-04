@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 const menu = [
   {
-    title: 'Hur fungerar det',
+    title: 'Hur fungerar det?',
     url: '/hur-fungerar-det',
   },
   {

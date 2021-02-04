@@ -1,4 +1,5 @@
 import Head from '../components/Head';
+import Content from '../components/Content';
 
 export default function PageHowItWorks() {
   return (
@@ -8,12 +9,7 @@ export default function PageHowItWorks() {
         description=""
         url="https://kodcoach.se/hur-fungerar-det/"
       />
-      <div className="max-w-screen-sm mx-auto my-8 md:my-12 font-mono">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
-            Hur fungerar det?
-          </span>
-        </h1>
+      <Content title="Hur fungerar det?">
         <p className="pb-2">
           En cookie är små textfiler som sparas på din dator (eller
           mobil/läsplatta) för att förbättra din användning och upplevelse av en
@@ -21,7 +17,7 @@ export default function PageHowItWorks() {
           använder, deras syfte samt hur cookies kan undvikas. Lagen säger också
           att du som besökare måste ge samtycke till att cookies används.
         </p>
-      </div>
+      </Content>
     </>
   );
 }
