@@ -9,7 +9,11 @@ export default function PageAboutCookies() {
         url="https://kodcoach.se/om-cookies/"
       />
       <div className="max-w-screen-sm mx-auto my-8 md:my-12 font-mono">
-        <h1 className="text-4xl">Om cookies</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
+            Om cookies
+          </span>
+        </h1>
         <p className="pb-2">
           En cookie är små textfiler som sparas på din dator (eller
           mobil/läsplatta) för att förbättra din användning och upplevelse av en
