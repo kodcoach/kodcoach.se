@@ -1,6 +1,6 @@
 import Head from '../components/Head';
 
-export default function OmCookies() {
+export default function PageAboutCookies() {
   return (
     <>
       <Head
@@ -36,9 +36,7 @@ export default function OmCookies() {
           <a href="https://policies.google.com/privacy">här</a> för mer
           information.
         </p>
-        <h3 className="text-2xl font-bold">
-          Hur kan jag neka Cookies?
-        </h3>
+        <h3 className="text-2xl font-bold">Hur kan jag neka Cookies?</h3>
         <p className="pb-2">
           Vill du inte att din dator tar emot och lagrar cookies kan du ställa
           in så att den automatiskt nekar till lagring av cookies, eller

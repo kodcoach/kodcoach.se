@@ -14,7 +14,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Index({ mentors }) {
+export default function PageIndex({ mentors }) {
   const [query, setQuery] = useState({ skill: '', search: '' });
 
   let sortedMentors = mentors;
@@ -45,13 +45,14 @@ export default function Index({ mentors }) {
     <>
       <Head title="Kodcoach" url="https://kodcoach.se/" />
 
-      <div className="flex justify-between">
+      <strong key="filters">Filtrering</strong>
+      <div className="flex justify-between space-x-4">
         <div className="w-full lg:w-1/2">
           <Select
-            label="skills"
+            label="Välj teknik"
             key="skills"
             options={skills}
-            placeholder="Select skill"
+            placeholder="Välj teknik"
             value={query.skill}
             onChange={(value) => setQuery({ ...query, skill: value })}
           />
@@ -59,10 +60,10 @@ export default function Index({ mentors }) {
         <div className="w-full lg:w-1/2">
           <input
             id="search"
-            className="w-full"
+            className="w-full rounded-md p-1.5 border-1 border-color-gray-500"
             type="search"
-            aria-label="Search"
-            placeholder="Search"
+            aria-label="Sök"
+            placeholder="Sök"
             defaultValue={query.search}
             onChange={(event) =>
               setQuery({ ...query, search: event.target.value })

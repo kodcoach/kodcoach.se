@@ -1,15 +1,15 @@
 import Head from '../components/Head';
 
-export default function PageHowItWorks() {
+export default function PageSubmitYouAsMentor() {
   return (
     <>
       <Head
         title="Kodcoach"
         description=""
-        url="https://kodcoach.se/hur-fungerar-det/"
+        url="https://kodcoach.se/anmal-dig-som-mentor/"
       />
 
-      <h1>Hur fungerar tjänsten</h1>
+      <h1>Anmäl dig som mentor</h1>
     </>
   );
 }
