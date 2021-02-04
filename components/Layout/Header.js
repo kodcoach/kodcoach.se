@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 
 const menu = [
   {
@@ -15,22 +16,20 @@ const Header = () => {
   return (
     <header className="text-white">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link href="/">
-          <a className="font-mono font-bold text-xl text-gray-900 uppercase mb-4 md:mb-0 md:mr-5">
-            <span className="text-indigo-600">Kod</span>Coach
-          </a>
-        </Link>
+        <Logo className="md:mr-5" />
         <nav className="flex-grow flex flex-wrap items-center text-base my-auto space-x-4">
           {menu.map((item) => (
             <Link href={item.url}>
-              <a className="hover:text-gray-700">{item.title}</a>
+              <a className="hover:underline hover:text-purple-600">
+                {item.title}
+              </a>
             </Link>
           ))}
         </nav>
         <Link href="/anmal-dig-som-mentor">
           <a
             className="inline-flex items-center border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5
-          text-white focus:outline-none font-bold bg-purple-500"
+          text-white focus:outline-none font-bold bg-purple-500 hover:bg-purple-600"
           >
             Anmäl dig som mentor
             <svg

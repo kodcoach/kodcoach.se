@@ -45,33 +45,6 @@ export default function PageIndex({ mentors }) {
     <>
       <Head title="Kodcoach" url="https://kodcoach.se/" />
 
-      <strong key="filters">Filtrering</strong>
-      <div className="flex justify-between space-x-4">
-        <div className="w-full lg:w-1/2">
-          <Select
-            label="Välj teknik"
-            key="skills"
-            options={skills}
-            placeholder="Välj teknik"
-            value={query.skill}
-            onChange={(value) => setQuery({ ...query, skill: value })}
-          />
-        </div>
-        <div className="w-full lg:w-1/2">
-          <input
-            id="search"
-            className="w-full rounded-md p-1.5 border-1 border-color-gray-500"
-            type="search"
-            aria-label="Sök"
-            placeholder="Sök"
-            defaultValue={query.search}
-            onChange={(event) =>
-              setQuery({ ...query, search: event.target.value })
-            }
-          />
-        </div>
-      </div>
-
       <div className="max-w-screen-sm mx-auto my-8 md:my-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
@@ -82,6 +55,35 @@ export default function PageIndex({ mentors }) {
           Erfarna utvecklare som gärna delar med sig av sina erfarenheter, sin
           kunskap & ger rådgivning till andra utvecklare som vill växa.
         </p>
+      </div>
+
+      <div className="mb-10">
+        <strong key="filters">Filtrering</strong>
+        <div className="flex justify-between space-x-4">
+          <div className="w-full lg:w-1/2">
+            <Select
+              label="Välj teknik"
+              key="skills"
+              options={skills}
+              placeholder="Välj teknik"
+              value={query.skill}
+              onChange={(value) => setQuery({ ...query, skill: value })}
+            />
+          </div>
+          <div className="w-full lg:w-1/2">
+            <input
+              id="search"
+              className="w-full rounded-md p-1.5 border-1 border-color-gray-500"
+              type="search"
+              aria-label="Sök"
+              placeholder="Sök"
+              defaultValue={query.search}
+              onChange={(event) =>
+                setQuery({ ...query, search: event.target.value })
+              }
+            />
+          </div>
+        </div>
       </div>
 
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
