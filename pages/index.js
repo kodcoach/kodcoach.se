@@ -73,10 +73,10 @@ export default function PageIndex({ mentors }) {
           <div className="w-full lg:w-1/2">
             <input
               id="search"
-              className="w-full rounded-md p-1.5 border-1 border-color-gray-500 text-black placeholder-black font-mono" 
+              className="w-full rounded-md p-1.5 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono" 
               type="search"
               aria-label="Sök"
-              placeholder="Sök"
+              placeholder="Sök" 
               defaultValue={query.search}
               onChange={(event) =>
                 setQuery({ ...query, search: event.target.value })

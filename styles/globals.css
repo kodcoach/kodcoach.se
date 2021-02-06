@@ -28,3 +28,9 @@ h5 {
 .bg-custom {
     background-color: rgb(24 24 25);
 }
+
+/* to be refactored */ 
+.bg-input {
+    border: 1px solid #ffff;
+    background-color: #0d111d;
+}
