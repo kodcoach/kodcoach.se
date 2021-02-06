@@ -57,7 +57,7 @@ export default function PageIndex({ mentors }) {
         </p>
       </div>
 
-      <div className="mb-10">
+      <div className="mb-10 font-mono">
         <strong key="filters">Filtrering</strong>
         <div className="flex justify-between space-x-4">
           <div className="w-full lg:w-1/2">
@@ -73,7 +73,7 @@ export default function PageIndex({ mentors }) {
           <div className="w-full lg:w-1/2">
             <input
               id="search"
-              className="w-full rounded-md p-1.5 border-1 border-color-gray-500"
+              className="w-full rounded-md p-1.5 border-1 border-color-gray-500 text-black placeholder-black font-mono" 
               type="search"
               aria-label="Sök"
               placeholder="Sök"
