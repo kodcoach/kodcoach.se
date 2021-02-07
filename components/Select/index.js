@@ -12,13 +12,13 @@ export default function Select({
   const customStyles = {
     menu: (provided) => ({
       ...provided,
-      background: '#0d111d'
+      background: '#121B36'
     }),
     option: (provided, state) => ({
       ...provided,
       color: '#333',
       paddingLeft: '1em',
-      background: state.isFocused ? '#8a5cf6' : '#0d111d',
+      background: state.isFocused ? '#7C3AED' : '#121B36',
       color: '#fff'
     }),
     control: (provided) => ({
@@ -26,7 +26,7 @@ export default function Select({
         borderColor: '#333',
         background: '#0d111d', 
         padding: '0',
-        borderColor: '#fff'
+        borderColor: '#cbd4d9'
     }),
     valueContainer: (provided) => ({
         ...provided,

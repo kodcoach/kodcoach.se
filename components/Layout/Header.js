@@ -15,12 +15,12 @@ const menu = [
 const Header = () => {
   return (
     <header className="text-white">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center sm:items-end">
         <Logo className="md:mr-5" />
-        <nav className="flex-grow flex flex-wrap items-center text-base my-auto space-x-4">
+        <nav className="flex-grow flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight ">
           {menu.map((item) => (
             <Link href={item.url}>
-              <a className="hover:underline hover:text-purple-600">
+              <a className="hover:underline hover:text-green-300">
                 {item.title}
               </a>
             </Link>
@@ -28,12 +28,12 @@ const Header = () => {
         </nav>
         <Link href="/anmal-dig-som-mentor">
           <a
-            className="inline-flex items-center border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5
-          text-white focus:outline-none font-bold bg-purple-500 hover:bg-purple-600"
+            className="inline-flex items-center border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5 font-mono tracking-tight text-white 
+            focus:outline-none bg-gradient-to-r transition-colors from-indigo-600 to-indigo-600 hover:to-purple-600"
           >
             Anmäl dig som mentor
             <svg
-              className="w-4 h-4 ml-1"
+              className="w-4 h-4 ml-2"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

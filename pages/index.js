@@ -46,21 +46,20 @@ export default function PageIndex({ mentors }) {
       <Head title="Kodcoach" url="https://kodcoach.se/" />
 
       <div className="max-w-screen-sm mx-auto my-8 md:my-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold font-sans">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold font-mono  tracking-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
             Utvecklare till utvecklare.
           </span>
         </h1>
-        <p className="text-center text-md sm:text-lg font-mono tracking-tight">
+        <p className="text-center text-lg sm:text-xl font-sans font-light">
           Erfarna utvecklare som gärna delar med sig av sina erfarenheter, sin
           kunskap & ger rådgivning till andra utvecklare som vill växa.
         </p>
       </div>
 
-      <div className="mb-10 font-mono">
-        <strong key="filters">Filtrering</strong>
-        <div className="flex justify-between space-x-4">
-          <div className="w-full lg:w-1/2">
+      <div className="w-full max-w-screen-sm mx-auto mb-8 md:mb-12 font-mono">
+        <div className="flex flex-wrap justify-between space-y-4 sm:space-x-4 sm:space-y-0">
+          <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <Select
               label="Välj teknik"
               key="skills"
@@ -70,10 +69,10 @@ export default function PageIndex({ mentors }) {
               onChange={(value) => setQuery({ ...query, skill: value })}
             />
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <input
               id="search"
-              className="w-full rounded-md p-1.5 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono" 
+              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono" 
               type="search"
               aria-label="Sök"
               placeholder="Sök" 
@@ -90,7 +89,7 @@ export default function PageIndex({ mentors }) {
         {sortedMentors.map((mentor, i) => (
           <div
             key={i}
-            className="bg-custom shadow-xl p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
+            className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
           >
             <img
               className="rounded-full mx-auto mb-3 -mt-1"
@@ -98,19 +97,19 @@ export default function PageIndex({ mentors }) {
               height="80"
               src={mentor.avatar}
             />
-            <h2 className="text-lg font-medium title-font mb-2">
+            <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
               {mentor.name}
             </h2>
             <p className="leading-relaxed text-base font-light">
               {mentor.description}
             </p>
-            <ul className="flex flex-grow flex-wrap content-end">
+            <ul className="flex flex-grow flex-wrap content-end mt-2">
               {mentor.skills
                 .sort((a, b) => a.localeCompare(b))
                 .map((teach, i) => (
                   <li
                     key={i}
-                    className="px-2 py-1 mr-2 mt-2 text-xs leading-none text-gray-800 bg-purple-100 rounded-full font-mono tracking-tight"
+                    className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
                   >
                     {teach}
                   </li>

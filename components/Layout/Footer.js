@@ -4,9 +4,8 @@ import Logo from './Logo';
 const Footer = () => {
   return (
     <footer className="body-font">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <Logo />
-        <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+      <div className="container px-5 py-8 mx-auto text-center">
+        <p className="text-sm sm:py-2 sm:mt-0 mt-4">
           © {new Date().getFullYear()} Kodcoach —
           <span className="ml-1">
             Skapad och förvaltad av{' '}
@@ -21,11 +20,13 @@ const Footer = () => {
         location="bottom"
         buttonText="OK"
         cookieName="ap"
-        style={{ background: '#2B373B' }}
+        style={{ background: '#121B36' }}
         buttonStyle={{
-          background: '#fff',
-          color: '#4e503b',
+          background: '#4F46E5',
+          color: '#fff',
           fontSize: '13px',
+          fontWeight: 'bold',
+          borderRadius: '4px',
         }}
         expires={150}
       >

@@ -13,7 +13,6 @@ body {
     font-weight: 400;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
- 
 
 h1,
 h2,
@@ -25,12 +24,23 @@ h5 {
 }
 
 /* to be refactored */ 
-.bg-custom {
-    background-color: rgb(24 24 25);
+.bg-input {
+    border: 1px solid #cbd4d9;
+    background-color: #0d111d;
 }
 
-/* to be refactored */ 
-.bg-input {
-    border: 1px solid #ffff;
-    background-color: #0d111d;
+.bg-custom-900 {
+    background-color: #090C15;
+}
+
+.bg-custom-800 {
+    background-color: #0C1223;
+}
+
+.bg-custom-700 {
+    background-color: #121B36;
+}
+
+.bg-custom-100 {
+    background-color: #cbd4d9;
 }
