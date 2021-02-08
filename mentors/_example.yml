@@ -4,17 +4,18 @@ name: Example
 # Description
 description: Example
 
-# Your avatar/image
-avatar:
+# Your avatar/image, url or path in public folder (use same name as for this file)
+avatar: /images/mentors/example.png
 
 # List of your skills
-skills: ['JavaScript', 'CSS', 'HTML']
+skills: ["JavaScript", "CSS", "HTML"]
 
-# Link to Twitter
-twitter: https://twitter.com/example
+contact:
+  # Link to Twitter
+  twitter: https://twitter.com/example
 
-# Link to your website
-website: https://exmaple.com
+  # Link to your website
+  website: https://exmaple.com
 
-# GitHub link
-github: https://github.com/example
+  # GitHub link
+  github: https://github.com/example

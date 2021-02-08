@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { GlobeOutline } from 'heroicons-react';
 import Head from '../components/Head';
 import Select from '../components/Select';
 import { getAllMentors } from '../lib/mentors';
@@ -13,6 +14,60 @@ export async function getStaticProps() {
     },
   };
 }
+
+const TwitterIcon = () => (
+  <svg width="20" height="20" fill="currentColor" class="text-white">
+    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+  </svg>
+);
+
+const ContactIcon = ({ type }) => {
+  switch (type.toLowerCase()) {
+    case 'twitter':
+      return <TwitterIcon />;
+    default:
+      return <GlobeOutline />;
+  }
+};
+
+const MentorCard = ({ mentor }) => (
+  <div
+    key={mentor.slug}
+    className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
+  >
+    <img
+      className="rounded-full mx-auto mb-3 -mt-1"
+      width="80"
+      height="80"
+      src={mentor.avatar}
+    />
+    <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
+      {mentor.name}
+    </h2>
+    <p className="leading-relaxed text-base font-light">{mentor.description}</p>
+    <ul className="flex flex-grow flex-wrap content-end mt-2">
+      {mentor.skills
+        .sort((a, b) => a.localeCompare(b))
+        .map((teach, i) => (
+          <li
+            key={i}
+            className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
+          >
+            {teach}
+          </li>
+        ))}
+    </ul>
+    <ul className="">
+      {Object.keys(mentor.contact || {}).map((f) => (
+        <li key={f}>
+          <a href={mentor.contact[f]} className="underline">
+            <ContactIcon type={f} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default function PageIndex({ mentors }) {
   const [query, setQuery] = useState({ skill: '', search: '' });
@@ -72,10 +127,10 @@ export default function PageIndex({ mentors }) {
           <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <input
               id="search"
-              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono" 
+              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono"
               type="search"
               aria-label="Sök"
-              placeholder="Sök" 
+              placeholder="Sök"
               defaultValue={query.search}
               onChange={(event) =>
                 setQuery({ ...query, search: event.target.value })
@@ -86,36 +141,8 @@ export default function PageIndex({ mentors }) {
       </div>
 
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        {sortedMentors.map((mentor, i) => (
-          <div
-            key={i}
-            className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
-          >
-            <img
-              className="rounded-full mx-auto mb-3 -mt-1"
-              width="80"
-              height="80"
-              src={mentor.avatar}
-            />
-            <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
-              {mentor.name}
-            </h2>
-            <p className="leading-relaxed text-base font-light">
-              {mentor.description}
-            </p>
-            <ul className="flex flex-grow flex-wrap content-end mt-2">
-              {mentor.skills
-                .sort((a, b) => a.localeCompare(b))
-                .map((teach, i) => (
-                  <li
-                    key={i}
-                    className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
-                  >
-                    {teach}
-                  </li>
-                ))}
-            </ul>
-          </div>
+        {sortedMentors.map((mentor) => (
+          <MentorCard mentor={mentor} />
         ))}
       </div>
     </>
