@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { GlobeOutline } from 'heroicons-react';
 import Head from '../components/Head';
 import Select from '../components/Select';
+import Icon from '../components/Icon';
 import { getAllMentors } from '../lib/mentors';
 import { flatten } from '../lib/utils';
 
@@ -23,10 +24,12 @@ const TwitterIcon = () => (
 
 const ContactIcon = ({ type }) => {
   switch (type.toLowerCase()) {
+    case 'github':
+      return <Icon.GitHub />;
     case 'twitter':
-      return <TwitterIcon />;
+      return <Icon.Twitter />;
     default:
-      return <GlobeOutline />;
+      return <Icon.GlobeOutline />;
   }
 };
 
@@ -57,9 +60,9 @@ const MentorCard = ({ mentor }) => (
           </li>
         ))}
     </ul>
-    <ul className="">
+    <ul className="mt-4 flex flex-grow flex-wrap content-end mt-2">
       {Object.keys(mentor.contact || {}).map((f) => (
-        <li key={f}>
+        <li key={f} className="mr-2">
           <a href={mentor.contact[f]} className="underline">
             <ContactIcon type={f} />
           </a>
