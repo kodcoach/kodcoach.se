@@ -1,5 +1,4 @@
-import Head from '../components/Head';
-import Content from '../components/Content';
+import { Head, Content, Link } from '../components';
 
 export default function PageSlack() {
   return (
@@ -7,11 +6,11 @@ export default function PageSlack() {
       <Head title="Kodcoach" description="" url="https://kodcoach.se/slack/" />
       <Content title="Slack">
         <p className="pb-2">
-          En cookie är små textfiler som sparas på din dator (eller
-          mobil/läsplatta) för att förbättra din användning och upplevelse av en
-          webbplats. Svensk lag kräver att vi informerar om vilka cookies vi
-          använder, deras syfte samt hur cookies kan undvikas. Lagen säger också
-          att du som besökare måste ge samtycke till att cookies används.
+          Vi har en <Link href="https://slack.com/">Slack</Link> organisation
+          där man kan prata med sin mentor men även få hjälp från andra. Skicka
+          mailadressen ni vill använda till{' '}
+          <Link href="mailto:info@kodcoach.se">info@kodcoach.se</Link> så lägger
+          vi till er!
         </p>
       </Content>
     </>

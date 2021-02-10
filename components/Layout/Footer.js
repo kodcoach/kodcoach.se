@@ -1,5 +1,6 @@
 import CookieConsent from 'react-cookie-consent';
 import Logo from './Logo';
+import Link from '../Link';
 
 const Footer = () => {
   return (
@@ -9,10 +10,8 @@ const Footer = () => {
           © {new Date().getFullYear()} Kodcoach —
           <span className="ml-1">
             Skapad och förvaltad av{' '}
-            <a href="http://frozzare.com" className="hover:underline">
-              @frozzare
-            </a>
-            , @sanlin och @marcustisater
+            <Link href="http://frozzare.com">@frozzare</Link>, @sanlin och
+            @marcustisater
           </span>
         </p>
       </div>
@@ -32,9 +31,9 @@ const Footer = () => {
       >
         <div>
           Vi använder{' '}
-          <a href="/om-cookies" className="text-white underline">
+          <Link href="/om-cookies" className="text-white underline">
             cookies
-          </a>{' '}
+          </Link>{' '}
           för att göra ditt presentletande så smidigt som möjligt.
         </div>
       </CookieConsent>

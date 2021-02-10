@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { GlobeOutline } from 'heroicons-react';
-import Head from '../components/Head';
-import Select from '../components/Select';
-import Icon from '../components/Icon';
+import { Head, Select, Icon } from '../components';
 import { getAllMentors } from '../lib/mentors';
 import { flatten } from '../lib/utils';
 
@@ -60,7 +58,7 @@ const MentorCard = ({ mentor }) => (
           </li>
         ))}
     </ul>
-    <ul className="mt-4 flex flex-grow flex-wrap content-end mt-2">
+    <ul className="mt-4 flex flex-grow flex-wrap content-end">
       {Object.keys(mentor.contact || {}).map((f) => (
         <li key={f} className="mr-2">
           <a href={mentor.contact[f]} className="underline">

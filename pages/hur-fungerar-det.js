@@ -1,5 +1,4 @@
-import Head from '../components/Head';
-import Content from '../components/Content';
+import { Head, Content } from '../components';
 
 export default function PageHowItWorks() {
   return (

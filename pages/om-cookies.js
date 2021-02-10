@@ -1,5 +1,4 @@
-import Head from '../components/Head';
-import Content from '../components/Content';
+import { Head, Content, Link } from '../components';
 
 export default function PageAboutCookies() {
   return (
@@ -19,9 +18,9 @@ export default function PageAboutCookies() {
         </p>
         <p className="pb-8">
           Läs mer om cookies på Post- och Telestyrelsens hemsida{' '}
-          <a href="https://www.pts.se/cookies" className="underline">
+          <Link href="https://www.pts.se/cookies">
             https://www.pts.se/cookies
-          </a>
+          </Link>
         </p>
         <h3 className="text-2xl font-bold">
           Hur används cookies på webbplatsen?
@@ -35,10 +34,8 @@ export default function PageAboutCookies() {
         </p>
         <p className="b-2 pb-8">
           Du kan läsa Googles sekretesspolicy{' '}
-          <a href="https://policies.google.com/privacy" className="underline">
-            här
-          </a>{' '}
-          för mer information.
+          <Link href="https://policies.google.com/privacy">här</Link> för mer
+          information.
         </p>
         <h3 className="text-2xl font-bold">Hur kan jag neka Cookies?</h3>
         <p className="pb-2">
