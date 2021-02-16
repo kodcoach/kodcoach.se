@@ -20,6 +20,7 @@ const Header = () => {
         <nav className="flex-grow flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight ">
           {menu.map((item) => (
             <Link
+              key={item.url}
               href={item.url}
               className="hover:underline hover:text-green-300"
             >

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { GlobeOutline } from 'heroicons-react';
 import { Head, Select, Icon } from '../components';
 import { getAllMentors } from '../lib/mentors';
 import { flatten } from '../lib/utils';
@@ -14,12 +13,6 @@ export async function getStaticProps() {
   };
 }
 
-const TwitterIcon = () => (
-  <svg width="20" height="20" fill="currentColor" class="text-white">
-    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-  </svg>
-);
-
 const ContactIcon = ({ type }) => {
   switch (type.toLowerCase()) {
     case 'github':
@@ -32,10 +25,7 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div
-    key={mentor.slug}
-    className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch"
-  >
+  <div className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch">
     <img
       className="rounded-full mx-auto mb-3 -mt-1"
       width="80"
@@ -45,6 +35,9 @@ const MentorCard = ({ mentor }) => (
     <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
       {mentor.name}
     </h2>
+    {mentor.available === false && (
+      <p className="bg-black text-white rounded-md">Inte tillgänglig just nu</p>
+    )}
     <p className="leading-relaxed text-base font-light">{mentor.description}</p>
     <ul className="flex flex-grow flex-wrap content-end mt-2">
       {mentor.skills
@@ -143,7 +136,7 @@ export default function PageIndex({ mentors }) {
 
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {sortedMentors.map((mentor) => (
-          <MentorCard mentor={mentor} />
+          <MentorCard key={mentor.slug} mentor={mentor} />
         ))}
       </div>
     </>

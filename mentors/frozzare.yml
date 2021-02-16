@@ -2,6 +2,7 @@ name: Fredrik Forsmo
 description: Full-stack developer and open-sourcerer focusing on JavaScript and Go.
 skills: ["JavaScript", "Go", "Docker", "Devops"]
 avatar: https://frozzare.com/photo.jpg
+available: false
 contact:
   website: https://frozzare.com
   twitter: https://twitter.com/frozzare
