@@ -10,6 +10,10 @@ avatar: /images/mentors/example.png
 # List of your skills
 skills: ["JavaScript", "CSS", "HTML"]
 
+# Available status
+# Default is true, set to false to unavailable as a mentor until you remove it.
+available: true
+
 contact:
   # Link to Twitter
   twitter: https://twitter.com/example
