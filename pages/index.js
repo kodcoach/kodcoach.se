@@ -25,41 +25,43 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div className="bg-custom-800 shadow-md p-6 rounded-lg flex flex-col flex-nowrap items-stretch">
-    <img
-      className="rounded-full mx-auto mb-3 -mt-1"
-      width="80"
-      height="80"
-      src={mentor.avatar}
-    />
-    <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
-      {mentor.name}
-    </h2>
+  <div className={"bg-custom-800 shadow-md rounded-lg flex flex-col justify-center " + (mentor.available === false ? 'pb-6' : 'p-6')}>
     {mentor.available === false && (
-      <p className="bg-black text-white rounded-md">Inte tillgänglig just nu</p>
+      <p className="bg-indigo-900 text-center text-white mb-6 p-1">Inte tillgänglig just nu</p>
     )}
-    <p className="leading-relaxed text-base font-light">{mentor.description}</p>
-    <ul className="flex flex-grow flex-wrap content-end mt-2">
-      {mentor.skills
-        .sort((a, b) => a.localeCompare(b))
-        .map((teach, i) => (
-          <li
-            key={i}
-            className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
-          >
-            {teach}
+    <div className={"flex flex-col flex-nowrap " + (mentor.available === false ? 'px-6' : '')}>
+      <img 
+        className="rounded-full mx-auto mb-3 -mt-1"
+        width="80"
+        height="80"
+        src={mentor.avatar}
+      />
+      <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
+        {mentor.name}
+      </h2>
+      <p className="leading-relaxed text-base font-light">{mentor.description}</p>
+      <ul className="flex flex-grow flex-wrap content-end mt-2">
+        {mentor.skills
+          .sort((a, b) => a.localeCompare(b))
+          .map((teach, i) => (
+            <li
+              key={i}
+              className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
+            >
+              {teach}
+            </li>
+          ))}
+      </ul>
+      <ul className="mt-4 flex flex-grow flex-wrap content-end">
+        {Object.keys(mentor.contact || {}).map((f) => (
+          <li key={f} className="mr-2">
+            <a href={mentor.contact[f]} className="underline">
+              <ContactIcon type={f} />
+            </a>
           </li>
         ))}
-    </ul>
-    <ul className="mt-4 flex flex-grow flex-wrap content-end">
-      {Object.keys(mentor.contact || {}).map((f) => (
-        <li key={f} className="mr-2">
-          <a href={mentor.contact[f]} className="underline">
-            <ContactIcon type={f} />
-          </a>
-        </li>
-      ))}
-    </ul>
+      </ul>
+    </div>
   </div>
 );
 
