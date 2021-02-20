@@ -160,7 +160,7 @@ export default function PageIndex({ mentors }) {
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
           <label className="inline-flex items-center mt-3">
-            <span className="text-white font-mono">Visa tillgängliga</span>
+            <span className="text-white font-mono">Visa tillgängliga coacher</span>
             <input
               className="ml-2 h-5 w-5 text-purple-600"
               defaultChecked={query.available}

@@ -6,7 +6,7 @@ export default function PageSlack() {
       <Head title="Kodcoach" description="" url="https://kodcoach.se/slack/" />
       <Content title="Slack">
         <p className="pb-2">
-          Vi har en <Link href="https://slack.com/">Slack</Link> organisation
+          Vi använder den populära chatt tjänsten <Link href="https://slack.com/">Slack</Link> 
           där man kan prata med sin mentor men även få hjälp från andra. Skicka
           mailadressen ni vill använda till{' '}
           <Link href="mailto:info@kodcoach.se">info@kodcoach.se</Link> så lägger
