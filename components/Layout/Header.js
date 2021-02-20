@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 const menu = [
   {
-    title: 'Hur fungerar det?',
+    title: 'Hur fungerar kodcoach?',
     url: '/hur-fungerar-det',
   },
   {
@@ -21,12 +21,12 @@ const Header = () => {
     <header className="text-white">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center sm:items-end">
         <Logo className="md:mr-5" />
-        <nav className="flex-grow flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight">
+        <nav className="flex-grow flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight justify-center">
           {menu.map((item) => (
             <Link
               key={item.url}
               href={item.url}
-              className="hover:underline hover:text-green-300"
+              className="underline hover:text-green-300 tracking-tighter"
             >
               {item.title}
             </Link>
