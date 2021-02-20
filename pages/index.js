@@ -19,6 +19,8 @@ const ContactIcon = ({ type }) => {
       return <Icon.GitHub />;
     case 'twitter':
       return <Icon.Twitter />;
+    case 'mail':
+      return <Icon.Mail />;
     default:
       return <Icon.GlobeOutline />;
   }
