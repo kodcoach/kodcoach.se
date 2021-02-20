@@ -27,12 +27,24 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div className={"bg-custom-800 shadow-md rounded-lg flex flex-col justify-center " + (mentor.available === false ? 'pb-6' : 'p-6')}>
+  <div
+    className={
+      'bg-custom-800 shadow-md rounded-lg flex flex-col justify-center ' +
+      (mentor.available === false ? 'pb-6' : 'p-6')
+    }
+  >
     {mentor.available === false && (
-      <p className="bg-indigo-900 text-center text-white mb-6 p-1">Inte tillgänglig just nu</p>
+      <p className="bg-indigo-900 text-center text-white mb-6 p-1">
+        Inte tillgänglig just nu
+      </p>
     )}
-    <div className={"flex flex-col flex-nowrap " + (mentor.available === false ? 'px-6' : '')}>
-      <img 
+    <div
+      className={
+        'flex flex-col flex-nowrap ' +
+        (mentor.available === false ? 'px-6' : '')
+      }
+    >
+      <img
         className="rounded-full mx-auto mb-3 -mt-1"
         width="80"
         height="80"
@@ -41,7 +53,9 @@ const MentorCard = ({ mentor }) => (
       <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
         {mentor.name}
       </h2>
-      <p className="leading-relaxed text-base font-light">{mentor.description}</p>
+      <p className="leading-relaxed text-base font-light">
+        {mentor.description}
+      </p>
       <ul className="flex flex-grow flex-wrap content-end mt-2">
         {mentor.skills
           .sort((a, b) => a.localeCompare(b))
@@ -68,7 +82,11 @@ const MentorCard = ({ mentor }) => (
 );
 
 export default function PageIndex({ mentors }) {
-  const [query, setQuery] = useState({ skill: '', search: '' });
+  const [query, setQuery] = useState({
+    skill: '',
+    search: '',
+    available: true,
+  });
 
   let sortedMentors = mentors;
 
@@ -90,6 +108,10 @@ export default function PageIndex({ mentors }) {
     );
   }
 
+  sortedMentors = sortedMentors.filter((mentor) =>
+    query.available ? mentor.available !== false : mentor.available === false
+  );
+
   const skills = Array.from(
     new Set(flatten(mentors.map((m) => m.skills)))
   ).map((t) => ({ value: t.toLowerCase(), label: t }));
@@ -106,7 +128,7 @@ export default function PageIndex({ mentors }) {
         </h1>
         <p className="text-center text-lg sm:text-xl font-sans font-light">
           Erfarna utvecklare som gärna delar med sig av sina erfarenheter, sin
-          kunskap & ger rådgivning till andra utvecklare som vill växa.
+          kunskap &amp; ger rådgivning till andra utvecklare som vill växa.
         </p>
       </div>
 
@@ -135,6 +157,19 @@ export default function PageIndex({ mentors }) {
               }
             />
           </div>
+        </div>
+        <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
+          <label className="inline-flex items-center mt-3">
+            <span className="text-white font-mono">Visa tillgängliga</span>
+            <input
+              className="ml-2 h-5 w-5 text-purple-600"
+              defaultChecked={query.available}
+              type="checkbox"
+              onChange={(event) =>
+                setQuery({ ...query, available: event.target.checked })
+              }
+            />
+          </label>
         </div>
       </div>
 
