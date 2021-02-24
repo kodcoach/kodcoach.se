@@ -1,4 +1,4 @@
-import { Head, Content, Link } from '../components';
+import { Head, Badge, Content, Link } from '../components';
 
 export default function PageSubmitYouAsMentor() {
   return (
@@ -24,11 +24,11 @@ export default function PageSubmitYouAsMentor() {
           1. Lägg till din mentors-fil
         </h2>
         <p className="pb-5">
-          Börja med att forka vårt{' '}
-          <Link href="https://github.com/kodcoach/kodcoach.se">repo</Link> på
-          GitHub och kopiera "_example.yml" filen i "mentors"-mappen till en ny
-          fil i samma mapp med ett eget namn, förslagsvis döper du den till
-          samma sak som ditt GitHub-användarnamn.
+          Börja med att forka vårt repo på GitHub och kopiera{' '}
+          <Badge text="_example.yml" /> filen i{' '}
+          <Badge text='"mentors"-mappen' /> till en ny fil i samma mapp med ett
+          eget namn, förslagsvis döper du den till samma sak som ditt
+          GitHub-användarnamn.
         </p>
 
         <p className="pb-10">
