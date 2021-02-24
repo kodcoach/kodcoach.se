@@ -16,11 +16,11 @@ export default function PageHowItWorks() {
         </p>
 
         <h2 className="text-3xl font-sans bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
-          1. Kontakta en kodcoach
+          1. Kontakta en mentor
         </h2>
         <p className="pb-10">
-          På startsidan hittar du en lista av kodcoacher som erbjuder sin hjälp.
-          Ta kontakt med en kodcoach över mejl eller direkt via{' '}
+          På startsidan hittar du en lista av mentorer som erbjuder sin hjälp.
+          Ta kontakt med en mentor över mejl eller direkt via{' '}
           <Link href="/slack">Slack</Link>.
         </p>
 
@@ -42,13 +42,14 @@ export default function PageHowItWorks() {
         </p>
 
         <p className="pb-10">
-          Vi tror att ni klarar er alldelse utmärkt själv, men vi finns alltid
+          Vi tror att ni klarar er alldelse utmärkt själva, men vi finns alltid
           här om ni är osäkra på ert upplägg eller andra frågor.
         </p>
 
         <p className="pb-10">
-          Vi har nolltolerans mot coacher som uppför sig dåligt. Skriv till oss
-          på <Link href="mailto:info@kodcoach.se">info@kodcoach.se</Link>!
+          Vi har nolltolerans mot dåligt uppförande. Skriv till oss på{' '}
+          <Link href="mailto:info@kodcoach.se">info@kodcoach.se</Link> om det
+          skulle vara något!
         </p>
       </Content>
     </>

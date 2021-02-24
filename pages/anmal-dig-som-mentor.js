@@ -11,7 +11,7 @@ export default function PageSubmitYouAsMentor() {
       <Content title="Anmäl dig som mentor">
         <p className="pb-10">
           Vad kul att du vill vara med och bidra som mentor för en eller flera
-          utvecklare.
+          adapter.
         </p>
 
         <p className="pb-10">
@@ -49,9 +49,17 @@ export default function PageSubmitYouAsMentor() {
           3. Gör en pull-request
         </h2>
         <p className="pb-10">
-          När du är klar så gör du en pull request till vårt repo på GitHub med
-          din mentors-fil så kommer den att accepteras och kort därefter visas
-          på kodcoach.se.
+          När du är klar gör du en pull request till vårt repo på GitHub med din
+          mentors-fil så kommer den att accepteras och kort därefter visas på
+          kodcoach.se.
+        </p>
+
+        <h2 className="text-3xl font-sans bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
+          4. Anslut till Slack
+        </h2>
+        <p className="pb-10">
+          Anslut över <Link href="/slack">Slack</Link> för att snabbt kunna
+          hitta varandra.
         </p>
       </Content>
     </>
