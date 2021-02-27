@@ -27,56 +27,61 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div
-    className={
-      'bg-custom-800 shadow-md rounded-lg flex flex-col justify-center ' +
-      (mentor.available === false ? 'pb-6' : 'p-6')
-    }
-  >
-    {mentor.available === false && (
-      <p className="bg-indigo-900 text-center text-white mb-6 p-1">
-        Inte tillgänglig just nu
-      </p>
-    )}
-    <div
-      className={
-        'flex flex-col flex-nowrap ' +
-        (mentor.available === false ? 'px-6' : '')
-      }
-    >
-      <img
-        className="rounded-full mx-auto mb-3 -mt-1"
-        width="80"
-        height="80"
-        src={mentor.avatar}
-      />
-      <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
-        {mentor.name}
-      </h2>
-      <p className="leading-relaxed text-base font-light">
-        {mentor.description}
-      </p>
-      <ul className="flex flex-grow flex-wrap content-end mt-2">
-        {mentor.skills
-          .sort((a, b) => a.localeCompare(b))
-          .map((teach, i) => (
-            <li
-              key={i}
-              className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
-            >
-              {teach}
-            </li>
-          ))}
-      </ul>
-      <ul className="mt-4 flex flex-grow flex-wrap content-end">
-        {Object.keys(mentor.contact || {}).map((f) => (
-          <li key={f} className="mr-2">
-            <a href={mentor.contact[f]} className="underline">
-              <ContactIcon type={f} />
-            </a>
+  <div className="bg-custom-800 shadow-md rounded-lg flex flex-col flex-nowrap justify-start p-6">
+    <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
+      {mentor.name}
+      {mentor.available === false && (
+        <small className="block text-xs text-white leading-none font-mono tracking-tight mb-1">
+          Ej tillgänglig
+        </small>
+      )}
+    </h2>
+
+    <p className="leading-relaxed text-base font-light">
+      {mentor.description}
+    </p>
+    <ul className={
+      'flex flex-grow flex-wrap content-end mt-2 flex-2 ' +
+      (mentor.available === false ? 'opacity-70' : '')
+    }>
+      {mentor.skills
+        .sort((a, b) => a.localeCompare(b))
+        .map((teach, i) => (
+          <li
+            key={i}
+            className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
+          >
+            {teach}
           </li>
         ))}
-      </ul>
+    </ul>
+
+    <div className="flex flex-row flex-nowrap items-center order-first">
+      {mentor.avatar && (
+        <img
+          className={
+            'rounded-full mr-3 -mt-1 mb-3 ' +
+            (mentor.available === false ? 'opacity-60' : '')
+          }
+          width="80"
+          height="80"
+          src={mentor.avatar}
+        />
+      )}
+      {mentor.contact && (
+        <div>
+          <p className="text-xs mb-0">Kontakta mig</p>
+          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
+            {Object.keys(mentor.contact || {}).map((f) => (
+              <li key={f} className="mr-2">
+                <a href={mentor.contact[f]} className="underline">
+                  <ContactIcon type={f} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   </div>
 );
@@ -160,13 +165,13 @@ export default function PageIndex({ mentors }) {
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
           <label className="inline-flex items-center mt-3">
-            <span className="text-white font-mono">Visa tillgängliga coacher</span>
+            <span className="leading-relaxed text-sm font-light font-mono">Visa endast tillgängliga coacher</span>
             <input
               className="ml-2 h-5 w-5 text-purple-600"
               defaultChecked={query.available}
               type="checkbox"
               onChange={(event) =>
-                setQuery({ ...query, available: event.target.checked })
+                setQuery({ ...query, available: event.target.checked ? event.target.checked : '' })
               }
             />
           </label>
