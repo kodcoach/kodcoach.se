@@ -10,8 +10,8 @@ const Footer = () => {
           © {new Date().getFullYear()} Kodcoach —
           <span className="ml-1">
             Skapad och förvaltad av{' '}
-            <Link href="http://frozzare.com">@frozzare</Link>, @sanlin och
-            @marcustisater
+            <Link href="http://frozzare.com">@frozzare</Link>, @sanlin och&nbsp;
+            <Link href="http://marcustisater.me">@marcustisater</Link>
           </span>
         </p>
       </div>
