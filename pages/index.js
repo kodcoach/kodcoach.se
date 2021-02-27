@@ -27,7 +27,9 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div className="bg-custom-800 shadow-md rounded-lg flex flex-col flex-nowrap justify-start p-6">
+  <div className={'bg-custom-800 shadow-md rounded-lg flex flex-col flex-nowrap justify-start p-6 ' +
+    (mentor.available === false ? 'opacity-70' : '')
+  }>
     <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
       {mentor.name}
       {mentor.available === false && (
@@ -114,7 +116,7 @@ export default function PageIndex({ mentors }) {
   }
 
   sortedMentors = sortedMentors.filter((mentor) =>
-    query.available ? mentor.available !== false : mentor.available === false
+    query.available ? mentor.available !== false : mentor
   );
 
   const skills = Array.from(
