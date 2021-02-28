@@ -6,11 +6,17 @@ const Footer = () => {
   return (
     <footer className="body-font">
       <div className="container px-5 py-8 mx-auto text-center">
-        <p className="text-sm sm:py-2 sm:mt-0 mt-4">
+        <p className="text-md sm:py-2 sm:mt-0 mt-4">
+          <Link href="/slack" className="mr-2 underline hover:text-green-400">Slack</Link>|
+          <Link href="/code-of-conduct" className="mx-2 underline hover:text-green-400">Uppförandekod</Link>|
+          <Link href="/om-cookies" className="ml-2 underline hover:text-green-400">Om cookies</Link>
+        </p>
+        <p className="text-sm sm:py-2 mt-2">
           © {new Date().getFullYear()} Kodcoach —
           <span className="ml-1">
             Skapad och förvaltad av{' '}
-            <Link href="http://frozzare.com">@frozzare</Link>, @sanlin och&nbsp;
+            <Link href="http://frozzare.com">@frozzare</Link>,&nbsp;
+            <Link href="http://sandralindberg.github.io">@sanlin</Link> och&nbsp;
             <Link href="http://marcustisater.me">@marcustisater</Link>
           </span>
         </p>

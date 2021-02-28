@@ -3,25 +3,17 @@ import Logo from './Logo';
 
 const menu = [
   {
-    title: 'Hur fungerar kodcoach?',
+    title: 'Hur fungerar det?',
     url: '/hur-fungerar-det',
   },
-  {
-    title: 'Slack',
-    url: '/slack',
-  },
-  {
-    title: 'Code of conduct',
-    url: '/code-of-conduct'
-  }
 ];
 
 const Header = () => {
   return (
     <header className="text-white">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center sm:items-end">
-        <Logo className="md:mr-5" />
-        <nav className="flex-grow flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight justify-center">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col sm:flex-row items-center justify-center sm:justify-between md:justify-start">
+        <Logo className="flex-shrink-0 flex-grow-0 mb-4" />
+        <nav className="flex-grow flex-shrink flex flex-wrap items-center text-base space-x-4 font-mono tracking-tight justify-center mb-4 sm:justify-start sm:px-5">
           {menu.map((item) => (
             <Link
               key={item.url}
@@ -34,7 +26,7 @@ const Header = () => {
         </nav>
         <Link
           href="/anmal-dig-som-mentor"
-          className="inline-flex items-center border-0 py-1 px-3 rounded text-base mt-4 md:mt-0 md:ml-5 font-mono tracking-tight text-white
+          className="flex-shrink-0 flex-grow-0 inline-flex items-center border-0 py-1 px-3 rounded text-base font-mono tracking-tight text-white mb-4
             focus:outline-none bg-gradient-to-r transition-colors from-indigo-600 to-indigo-600 hover:to-purple-600"
         >
           Anmäl dig som mentor

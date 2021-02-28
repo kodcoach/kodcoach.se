@@ -76,7 +76,7 @@ const MentorCard = ({ mentor }) => (
           <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
             {Object.keys(mentor.contact || {}).map((f) => (
               <li key={f} className="mr-2">
-                <a href={mentor.contact[f]} className="underline">
+                <a href={mentor.contact[f]} className="underline" aria-label="{f}">
                   <ContactIcon type={f} />
                 </a>
               </li>
