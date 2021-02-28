@@ -73,10 +73,10 @@ const MentorCard = ({ mentor }) => (
       {mentor.contact && (
         <div>
           <p className="text-xs mb-0">Kontakta mig</p>
-          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
+          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 " title={'kontakta '+mentor.name+' på'}>
             {Object.keys(mentor.contact || {}).map((f) => (
               <li key={f} className="mr-2">
-                <a href={mentor.contact[f]} className="underline" aria-label="{f}">
+                <a href={mentor.contact[f]} className="underline" aria-label={f ? f : 'webbplats'}>
                   <ContactIcon type={f} />
                 </a>
               </li>
