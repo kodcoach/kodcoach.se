@@ -27,7 +27,7 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         with:
           accessToken: ${{ secrets.PUSH_TOKEN }}
-          commitEmail: "accounts+github@jitesoft.com"
-          commitUser: "JiteBot"
+          commitEmail: "fredrik.forsmo+frozzbot@gmail.com"
+          commitUser: "Frozzbot"
           destBranch: "master"
           srcDir: "out"
