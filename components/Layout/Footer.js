@@ -40,7 +40,6 @@ const Footer = () => {
           <Link href="/om-cookies" className="text-white underline">
             cookies
           </Link>{' '}
-          för att göra ditt presentletande så smidigt som möjligt.
         </div>
       </CookieConsent>
     </footer>
