@@ -43,7 +43,7 @@ const MentorCard = ({ mentor }) => (
       {mentor.description}
     </p>
     <ul className={
-      'flex flex-grow flex-wrap content-end mt-2 flex-2 ' +
+      'flex flex-grow flex-wrap items-end mt-2 ' +
       (mentor.available === false ? 'opacity-70' : '')
     }>
       {mentor.skills
@@ -128,8 +128,10 @@ export default function PageIndex({ mentors }) {
       <Head title="Kodcoach" url="https://kodcoach.se/" />
 
       <div className="max-w-screen-sm mx-auto my-8 md:my-12">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold font-mono  tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold font-mono tracking-tight">
+          <span className="block mx-auto max-w-sm sm:max-w-md md:max-w-full
+            bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500"
+          >
             Utvecklare till utvecklare.
           </span>
         </h1>
@@ -166,10 +168,10 @@ export default function PageIndex({ mentors }) {
           </div>
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
-          <label className="inline-flex items-center mt-3">
-            <span className="leading-relaxed text-sm font-light font-mono">Visa endast tillgängliga coacher</span>
+          <label className="inline-flex items-center mt-4">
+            <span className="leading-relaxed text-sm font-light font-mono">Visa endast tillgängliga</span>
             <input
-              className="ml-2 h-5 w-5 text-purple-600"
+              className="ml-2 text-purple-600"
               defaultChecked={query.available}
               type="checkbox"
               onChange={(event) =>

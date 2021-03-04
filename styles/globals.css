@@ -23,6 +23,16 @@ h5 {
     margin-bottom: 1rem;
 }
 
+input[type='search'] {
+    appearance: none;
+    min-height: 48px;
+}
+
+input[type=checkbox]{
+  transform: scale(2);
+  padding: 10px;
+}
+
 /* to be refactored */ 
 .bg-input {
     border: 1px solid #cbd4d9;

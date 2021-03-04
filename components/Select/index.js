@@ -26,7 +26,8 @@ export default function Select({
         borderColor: '#333',
         background: '#0d111d', 
         padding: '0',
-        borderColor: '#cbd4d9'
+        borderColor: '#cbd4d9',
+        minHeight: '48px'
     }),
     valueContainer: (provided) => ({
         ...provided,
