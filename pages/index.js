@@ -127,7 +127,7 @@ export default function PageIndex({ mentors }) {
     <>
       <Head title="Kodcoach" url="https://kodcoach.se/" />
 
-      <div className="max-w-screen-sm mx-auto my-8 md:my-12">
+      <div className="max-w-screen-sm mx-auto mb-8 sm:my-8 md:my-12">
         <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold font-mono tracking-tight">
           <span className="block mx-auto max-w-sm sm:max-w-md md:max-w-full
             bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500"
