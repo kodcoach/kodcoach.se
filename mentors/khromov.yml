@@ -2,7 +2,7 @@ name: Stanislav Khromov
 description: Full-stack web developer. Passionate about free speech and the media industry.
 avatar: https://avatars.githubusercontent.com/u/1207507?s=460&u=737bb556c50cee8f1ec0d6f1f8a19adfed118a20&v=4
 available: true
-skills: [ "WordPress", "Next.js", "DevOps", "Docker", "AWS", ]
+skills: [ "WordPress", "Next.js", "DevOps", "Docker", "AWS" ]
 contact:
   website: https://khromov.se
   twitter: https://twitter.com/khromov
