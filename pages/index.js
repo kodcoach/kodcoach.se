@@ -5,7 +5,6 @@ import { Head, Select, Icon } from '../components';
 import { getAllMentors } from '../lib/mentors';
 import { flatten, getNiceContactTitle } from '../lib/utils';
 
-
 export async function getStaticProps() {
   const mentors = getAllMentors();
 
@@ -30,9 +29,12 @@ const ContactIcon = ({ type }) => {
 };
 
 const MentorCard = ({ mentor }) => (
-  <div className={'bg-custom-800 shadow-md rounded-lg flex flex-col flex-nowrap justify-start p-6 ' +
-    (mentor.available === false ? 'opacity-70' : '')
-  }>
+  <div
+    className={
+      'bg-custom-800 shadow-md rounded-lg flex flex-col flex-nowrap justify-start p-6 ' +
+      (mentor.available === false ? 'opacity-70' : '')
+    }
+  >
     <h2 className="text-lg text-white font-mono font-normal tracking-tight mb-1">
       {mentor.name}
       {mentor.available === false && (
@@ -42,15 +44,15 @@ const MentorCard = ({ mentor }) => (
       )}
     </h2>
 
-    <p className="leading-relaxed text-base font-light">
-      {mentor.description}
-    </p>
-    <ul className={
-      'flex flex-grow flex-wrap items-end mt-2 ' +
-      (mentor.available === false ? 'opacity-70' : '')
-    }>
+    <p className="leading-relaxed text-base font-light">{mentor.description}</p>
+    <ul
+      className={
+        'flex flex-grow flex-wrap items-end mt-2 ' +
+        (mentor.available === false ? 'opacity-70' : '')
+      }
+    >
       {mentor.skills
-        .sort((a, b) => a.localeCompare(b))
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
         .map((teach, i) => (
           <li
             key={i}
@@ -78,14 +80,29 @@ const MentorCard = ({ mentor }) => (
           <p className="text-xs mb-0">Kontakta mig</p>
           <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
             {Object.keys(mentor.contact || {}).map((f) => (
-              <li key={f} className="mr-2" title={getNiceContactTitle(f, mentor.name)}>
-                {  (f === 'mail') ?
-                  <Obfuscate email={atob(mentor.contact[f])} className="underline" aria-label={f ? f : 'webbplats'}>
+              <li
+                key={f}
+                className="mr-2"
+                title={getNiceContactTitle(f, mentor.name)}
+              >
+                {f === 'mail' ? (
+                  <Obfuscate
+                    email={atob(mentor.contact[f])}
+                    className="underline"
+                    aria-label={f ? f : 'webbplats'}
+                  >
                     <ContactIcon type={f} />
-                  </Obfuscate> :
-                  <a target="_blank" href={mentor.contact[f]} className="underline" aria-label={f ? f : 'webbplats'}>
+                  </Obfuscate>
+                ) : (
+                  <a
+                    target="_blank"
+                    href={mentor.contact[f]}
+                    className="underline"
+                    aria-label={f ? f : 'webbplats'}
+                  >
                     <ContactIcon type={f} />
-                  </a> }
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -126,9 +143,9 @@ export default function PageIndex({ mentors }) {
     query.available ? mentor.available !== false : mentor
   );
 
-  const skills = Array.from(
-    new Set(flatten(mentors.map((m) => m.skills)))
-  ).map((t) => ({ value: t.toLowerCase(), label: t }));
+  const skills = Array.from(new Set(flatten(mentors.map((m) => m.skills))))
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+    .map((t) => ({ value: t.toLowerCase(), label: t }));
 
   return (
     <>
@@ -136,7 +153,8 @@ export default function PageIndex({ mentors }) {
 
       <div className="max-w-screen-sm mx-auto mb-8 sm:my-8 md:my-12">
         <h1 className="text-4xl sm:text-5xl md:text-6xl text-center font-bold font-mono tracking-tight">
-          <span className="block mx-auto max-w-sm sm:max-w-md md:max-w-full
+          <span
+            className="block mx-auto max-w-sm sm:max-w-md md:max-w-full
             bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-indigo-500 to-purple-500"
           >
             Utvecklare till utvecklare.
@@ -176,13 +194,18 @@ export default function PageIndex({ mentors }) {
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
           <label className="inline-flex items-center mt-4">
-            <span className="leading-relaxed text-sm font-light font-mono">Visa endast tillgängliga</span>
+            <span className="leading-relaxed text-sm font-light font-mono">
+              Visa endast tillgängliga
+            </span>
             <input
               className="ml-2 text-purple-600"
               defaultChecked={query.available}
               type="checkbox"
               onChange={(event) =>
-                setQuery({ ...query, available: event.target.checked ? event.target.checked : '' })
+                setQuery({
+                  ...query,
+                  available: event.target.checked ? event.target.checked : '',
+                })
               }
             />
           </label>
