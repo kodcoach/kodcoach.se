@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Head, Select, Icon } from '../components';
 import { getAllMentors } from '../lib/mentors';
-import { flatten } from '../lib/utils';
+import { flatten, getNiceContactTitle } from '../lib/utils';
 
 export async function getStaticProps() {
   const mentors = getAllMentors();
@@ -73,9 +73,9 @@ const MentorCard = ({ mentor }) => (
       {mentor.contact && (
         <div>
           <p className="text-xs mb-0">Kontakta mig</p>
-          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 " title={'kontakta '+mentor.name+' på'}>
+          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
             {Object.keys(mentor.contact || {}).map((f) => (
-              <li key={f} className="mr-2">
+              <li key={f} className="mr-2" title={getNiceContactTitle(f, mentor.name)}>
                 <a href={mentor.contact[f]} className="underline" aria-label={f ? f : 'webbplats'}>
                   <ContactIcon type={f} />
                 </a>
