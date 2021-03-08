@@ -1,7 +1,10 @@
+import Obfuscate from 'react-obfuscate';
 import { useState } from 'react';
+import { atob } from 'isomorphic-base64';
 import { Head, Select, Icon } from '../components';
 import { getAllMentors } from '../lib/mentors';
 import { flatten, getNiceContactTitle } from '../lib/utils';
+
 
 export async function getStaticProps() {
   const mentors = getAllMentors();
@@ -76,9 +79,13 @@ const MentorCard = ({ mentor }) => (
           <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
             {Object.keys(mentor.contact || {}).map((f) => (
               <li key={f} className="mr-2" title={getNiceContactTitle(f, mentor.name)}>
-                <a href={mentor.contact[f]} className="underline" aria-label={f ? f : 'webbplats'}>
-                  <ContactIcon type={f} />
-                </a>
+                {  (f === 'mail') ?
+                  <Obfuscate email={atob(mentor.contact[f])} className="underline" aria-label={f ? f : 'webbplats'}>
+                    <ContactIcon type={f} />
+                  </Obfuscate> :
+                  <a target="_blank" href={mentor.contact[f]} className="underline" aria-label={f ? f : 'webbplats'}>
+                    <ContactIcon type={f} />
+                  </a> }
               </li>
             ))}
           </ul>

@@ -23,3 +23,6 @@ contact:
 
   # GitHub link
   github: https://github.com/example
+
+  # Email - base64 encoded for added privacy
+  mail: eW91QGV4YW1wbGUub3Jn
