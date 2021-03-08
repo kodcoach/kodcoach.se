@@ -13,3 +13,12 @@ npm run dev
 
 Besök: http://localhost:3000/
 
+### Bygg projektet
+
+```
+npm run build
+npm run start
+```
+
+Besök: http://localhost:3000/
+
