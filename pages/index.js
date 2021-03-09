@@ -109,6 +109,9 @@ const MentorCard = ({ mentor }) => (
         </div>
       )}
     </div>
+    <a target="_blank" href="https://join.slack.com/t/kodcoach/shared_invite/zt-ng2lrbhu-cuTAKRX~UZMHBG3T31WOCg" className="block text-center	 mt-5 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Gå med i Slack och kontakta 👉
+    </a>
   </div>
 );
 
