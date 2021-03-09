@@ -1,7 +1,7 @@
 import Obfuscate from 'react-obfuscate';
 import { useState } from 'react';
 import { atob } from 'isomorphic-base64';
-import { Head, Select, Icon } from '../components';
+import { Head, Select, Icon, Link } from '../components';
 import { getAllMentors } from '../lib/mentors';
 import { flatten, getNiceContactTitle } from '../lib/utils';
 
@@ -28,6 +28,49 @@ const ContactIcon = ({ type }) => {
   }
 };
 
+const MentorCTA = ({ name, contact, cta }) => {
+  let text = '';
+  let link = '';
+
+  switch (cta) {
+    case 'website':
+      text = `Kontakta via hemsidan`;
+      link = contact[cta];
+      break;
+    case 'mail':
+    case 'twitter':
+    case 'github':
+      text = getNiceContactTitle(cta, '');
+      link = contact[cta];
+      break;
+
+    // slack
+    default:
+      link =
+        'https://join.slack.com/t/kodcoach/shared_invite/zt-ng2lrbhu-cuTAKRX~UZMHBG3T31WOCg';
+      text = 'Gå med i Slack och kontakta';
+      break;
+  }
+
+  return cta === 'mail' ? (
+    <Obfuscate
+      email={atob(contact[cta])}
+      aria-label="e-post"
+      className="block text-center mt-5 bg-green-500 hover:bg-green-700 text-white py-2 px-2 rounded font-mono text-sm"
+    >
+      {text}
+    </Obfuscate>
+  ) : (
+    <Link
+      target="_blank"
+      href={link}
+      className="block text-center mt-5 bg-green-500 hover:bg-green-700 text-white py-2 px-2 rounded font-mono text-sm"
+    >
+      {text}
+    </Link>
+  );
+};
+
 const MentorCard = ({ mentor }) => (
   <div
     className={
@@ -43,7 +86,6 @@ const MentorCard = ({ mentor }) => (
         </small>
       )}
     </h2>
-
     <p className="leading-relaxed text-base font-light">{mentor.description}</p>
     <ul
       className={
@@ -62,7 +104,6 @@ const MentorCard = ({ mentor }) => (
           </li>
         ))}
     </ul>
-
     <div className="flex flex-row flex-nowrap items-center order-first">
       {mentor.avatar && (
         <img
@@ -77,8 +118,7 @@ const MentorCard = ({ mentor }) => (
       )}
       {mentor.contact && (
         <div>
-          <p className="text-xs mb-0">Kontakta mig</p>
-          <ul className="mt-2 flex flex-grow flex-wrap content-end mb-3 ">
+          <ul className="flex flex-grow flex-wrap content-end mb-3">
             {Object.keys(mentor.contact || {}).map((f) => (
               <li
                 key={f}
@@ -89,19 +129,19 @@ const MentorCard = ({ mentor }) => (
                   <Obfuscate
                     email={atob(mentor.contact[f])}
                     className="underline"
-                    aria-label={f ? f : 'webbplats'}
+                    aria-label="e-post"
                   >
                     <ContactIcon type={f} />
                   </Obfuscate>
                 ) : (
-                  <a
+                  <Link
                     target="_blank"
                     href={mentor.contact[f]}
                     className="underline"
-                    aria-label={f ? f : 'webbplats'}
+                    aria-label={f !== 'website' ? f : 'webbplats'}
                   >
                     <ContactIcon type={f} />
-                  </a>
+                  </Link>
                 )}
               </li>
             ))}
@@ -109,6 +149,7 @@ const MentorCard = ({ mentor }) => (
         </div>
       )}
     </div>
+    <MentorCTA {...mentor} />
   </div>
 );
 
