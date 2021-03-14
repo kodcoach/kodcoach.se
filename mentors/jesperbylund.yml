@@ -1,0 +1,30 @@
+# Your name
+name: Jesper Bylund
+
+# Description
+description: Product designer and front heavy full stack developer. Bootstrapping products and discussing philosophy.
+
+# Your avatar/image, url or path in public folder (use same name as for this file)
+avatar: https://avatars.githubusercontent.com/u/186083?s=460&v=4
+
+# List of your skills
+skills: ["JS", "TS", "UX", "AWS", "Firebase"]
+
+# Available status
+# Default is true, set to false to unavailable as a mentor until you remove it.
+available: true
+
+contact:
+  # Link to Twitter
+  twitter: https://twitter.com/jesperbylund
+
+  # Link to your website
+  website: https://jesperbylund.com
+
+  # GitHub link
+  github: https://github.com/jesper-bylund
+
+  # Email - base64 encoded for added privacy
+  mail: bWFpbEBqZXNwZXJieWx1bmQuY29t
+
+cta: twitter # one of the contact ways, default slack.
