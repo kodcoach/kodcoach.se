@@ -176,12 +176,13 @@ export default function PageIndex({ mentors }) {
   }
 
   if (query.search) {
+    const lowercaseSearch = query.search.toLowerCase();
     sortedMentors = sortedMentors.filter(
       (mentor) =>
-        mentor.name.toLowerCase().indexOf(query.search) !== -1 ||
-        mentor.description.toLowerCase().indexOf(query.search) !== -1 ||
+        mentor.name.toLowerCase().indexOf(lowercaseSearch) !== -1 ||
+        mentor.description.toLowerCase().indexOf(lowercaseSearch) !== -1 ||
         !!mentor.expandedSkills.find(
-          (t) => t.toLowerCase().indexOf(query.search) !== -1
+          (t) => t.toLowerCase().indexOf(lowercaseSearch) !== -1
         )
     );
   }
