@@ -6,7 +6,7 @@ export default function Content({ title, children }) {
           {title}
         </span>
       </h1>
-      <div class="font-sans sm:text-xl">
+      <div class="font-sans font-light sm:text-lg">
         {children}
       </div>
     </div>

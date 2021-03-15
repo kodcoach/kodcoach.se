@@ -27,11 +27,11 @@ export default function PageCodeOfConduct() {
           samt offentligt identifiera någon som vi har fått klagomål om.
         </p>
 
-        <p className="mb-4">
-          Dåligt uppförande inkluderar men är inte begränsat till:
+        <p className="mb-4 mt-8">
+          <strong class="font-bold">Dåligt uppförande inkluderar men är inte begränsat till:</strong>
         </p>
 
-        <ul className="list-disc mt-8 mb-8 ml-5 space-y-4">
+        <ul className="list-disc mb-4 ml-5 space-y-4">
           <li>Stötande kommentarer relaterade till kön, könsidentitet och uttryck, sexuell läggning, funktionsvariation, psykisk sjukdom, neuro (a) typiska, fysiskt utseende, kroppsstorlek, ålder, ras eller religion.</li>
           <li>Oönskade kommentarer angående en persons livsstilsval och praxis, inklusive de som rör mat, hälsa, föräldraskap, droger och anställning.</li>
           <li>Medveten felkön eller användning av ”döda” eller avvisade namn</li>
@@ -46,11 +46,11 @@ export default function PageCodeOfConduct() {
           <li>Fotografering eller inspelning, inklusive loggning på nätet med trakasserier.</li>
         </ul>
 
-        <p className="mb-4">
+        <p className="mb-4 mt-12"><em>
           Denna uppförandekod är baserad på Annalee Flower Hornes Sample Slack Code of Conduct,
           som i sin tur bygger på Geek Feminism's Community Anti-Trakasseringspolicy.
           Vi har anpassat uppförandekoden för vårt eget bruk enligt villkoren i Creative Commons Attribution License.
-        </p>
+        </em></p>
       </Content>
     </>
   );

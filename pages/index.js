@@ -241,7 +241,7 @@ export default function PageIndex({ mentors }) {
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
           <label className="inline-flex items-center mt-4">
-            <span className="leading-relaxed text-sm font-light font-mono tracking-tight">
+            <span className="leading-relaxed text-sm font-mono tracking-tight">
               Visa endast tillgängliga
             </span>
             <input
