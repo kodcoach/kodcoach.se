@@ -56,15 +56,21 @@ const MentorCTA = ({ name, contact, cta }) => {
     <Obfuscate
       email={atob(contact[cta])}
       aria-label="e-post"
-      className="block text-center mt-5 bg-green-500 hover:bg-green-700 text-white py-2 px-2 rounded font-mono text-sm"
-    >
+      className="block mt-5 py-2 px-2 rounded transition
+        text-center text-sm text-custom-900 font-mono tracking-tight
+        bg-green-400 opacity-90 hover:opacity-100
+        transform scale-100 hover:scale-105"
+      >
       {text}
     </Obfuscate>
   ) : (
     <Link
       target="_blank"
       href={link}
-      className="block text-center mt-5 bg-green-500 hover:bg-green-700 text-white py-2 px-2 rounded font-mono text-sm"
+      className="block mt-5 py-2 px-2 rounded transition
+        text-center text-sm text-custom-900 font-mono tracking-tight
+        bg-green-400 opacity-90 hover:opacity-100
+        transform scale-100 hover:scale-105"
     >
       {text}
     </Link>
@@ -98,7 +104,7 @@ const MentorCard = ({ mentor }) => (
         .map((teach, i) => (
           <li
             key={i}
-            className="px-2 py-1 mr-2 mt-2 text-xs text-white leading-none bg-indigo-900 rounded-full font-mono tracking-tight"
+            className="px-2 py-1 mr-2 mt-2 text-xs leading-none bg-custom-600 text-custom-200 rounded-full font-mono tracking-tight"
           >
             {teach}
           </li>
@@ -118,17 +124,17 @@ const MentorCard = ({ mentor }) => (
       )}
       {mentor.contact && (
         <div>
-          <ul className="flex flex-grow flex-wrap content-end mb-3">
+          <ul className="flex flex-grow flex-wrap content-end text-custom-300 mb-3">
             {Object.keys(mentor.contact || {}).map((f) => (
               <li
                 key={f}
-                className="mr-2"
+                className="p-1"
                 title={getNiceContactTitle(f, mentor.name)}
               >
                 {f === 'mail' ? (
                   <Obfuscate
                     email={atob(mentor.contact[f])}
-                    className="underline"
+                    className="block transition-colors hover:text-green-400 p-1"
                     aria-label="e-post"
                   >
                     <ContactIcon type={f} />
@@ -137,7 +143,7 @@ const MentorCard = ({ mentor }) => (
                   <Link
                     target="_blank"
                     href={mentor.contact[f]}
-                    className="underline"
+                    className="block transition-colors hover:text-green-400 p-1"
                     aria-label={f !== 'website' ? f : 'webbplats'}
                   >
                     <ContactIcon type={f} />
@@ -207,7 +213,7 @@ export default function PageIndex({ mentors }) {
         </p>
       </div>
 
-      <div className="w-full max-w-screen-sm mx-auto mb-8 md:mb-12 font-mono">
+      <div className="w-full max-w-screen-sm mx-auto mb-8 md:mb-12 font-mono tracking-tight">
         <div className="flex flex-wrap justify-between space-y-4 sm:space-x-4 sm:space-y-0">
           <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <Select
@@ -222,7 +228,7 @@ export default function PageIndex({ mentors }) {
           <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <input
               id="search"
-              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono"
+              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono tracking-tight"
               type="search"
               aria-label="Sök"
               placeholder="Sök"
@@ -235,7 +241,7 @@ export default function PageIndex({ mentors }) {
         </div>
         <div className="space-y-4 sm:space-x-4 sm:space-y-0 text-center">
           <label className="inline-flex items-center mt-4">
-            <span className="leading-relaxed text-sm font-light font-mono">
+            <span className="leading-relaxed text-sm font-light font-mono tracking-tight">
               Visa endast tillgängliga
             </span>
             <input
@@ -253,7 +259,7 @@ export default function PageIndex({ mentors }) {
         </div>
       </div>
 
-      <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+      <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {sortedMentors.map((mentor) => (
           <MentorCard key={mentor.slug} mentor={mentor} />
         ))}
