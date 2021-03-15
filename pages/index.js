@@ -180,7 +180,7 @@ export default function PageIndex({ mentors }) {
       (mentor) =>
         mentor.name.toLowerCase().indexOf(query.search) !== -1 ||
         mentor.description.toLowerCase().indexOf(query.search) !== -1 ||
-        !!mentor.skills.find(
+        !!mentor.expandedSkills.find(
           (t) => t.toLowerCase().indexOf(query.search) !== -1
         )
     );
