@@ -15,7 +15,7 @@ export default function PageHowItWorks() {
           utvecklare att hitta sig en mentor (kodcoach).
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           1. Kontakta en mentor
         </h2>
         <p className="mb-4">
@@ -24,7 +24,7 @@ export default function PageHowItWorks() {
           <Link href="/slack">Slack</Link>.
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           2. Kom överens om ett upplägg
         </h2>
         <p className="mb-4">
@@ -33,7 +33,7 @@ export default function PageHowItWorks() {
           överens om en plan som passar er båda.
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           3. Anslut till Slack
         </h2>
         <p className="mb-4">

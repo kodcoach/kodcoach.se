@@ -31,7 +31,7 @@ export default function PageCodeOfConduct() {
           Dåligt uppförande inkluderar men är inte begränsat till:
         </p>
 
-        <ul className="list-disc mb-4 ml-4">
+        <ul className="list-disc mt-8 mb-8 ml-5 space-y-4">
           <li>Stötande kommentarer relaterade till kön, könsidentitet och uttryck, sexuell läggning, funktionsvariation, psykisk sjukdom, neuro (a) typiska, fysiskt utseende, kroppsstorlek, ålder, ras eller religion.</li>
           <li>Oönskade kommentarer angående en persons livsstilsval och praxis, inklusive de som rör mat, hälsa, föräldraskap, droger och anställning.</li>
           <li>Medveten felkön eller användning av ”döda” eller avvisade namn</li>
