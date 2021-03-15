@@ -22,7 +22,7 @@ export default function PageAboutCookies() {
             https://www.pts.se/cookies
           </Link>
         </p>
-        <h2 className="text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           Hur används cookies på webbplatsen?
         </h2>
         <p className="mb-4">
@@ -37,7 +37,7 @@ export default function PageAboutCookies() {
           <Link href="https://policies.google.com/privacy">här</Link> för mer
           information.
         </p>
-        <h2 className="text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           Hur kan jag neka Cookies?
         </h2>
         <p className="mb-4">

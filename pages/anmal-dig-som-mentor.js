@@ -20,7 +20,7 @@ export default function PageSubmitYouAsMentor() {
           utvecklare att hitta sig en mentor (kodcoach).
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           1. Lägg till din mentors-fil
         </h2>
         <p className="mb-4">
@@ -37,7 +37,7 @@ export default function PageSubmitYouAsMentor() {
           </Link>
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           2. Fyll i filen med information om dig
         </h2>
         <p className="mb-4">
@@ -45,7 +45,7 @@ export default function PageSubmitYouAsMentor() {
           namn, beskrivning om dig och vilka tekniker du vill hjälpa till med.
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           3. Gör en pull-request
         </h2>
         <p className="mb-4">
@@ -54,7 +54,7 @@ export default function PageSubmitYouAsMentor() {
           kodcoach.se.
         </p>
 
-        <h2 className="text-2xl font-sans text-purple-400 mb-4 mt-10">
+        <h2 className="text-xl sm:text-2xl font-mono tracking-tight text-purple-400 mb-4 mt-10">
           4. Anslut till Slack
         </h2>
         <p className="mb-4">
