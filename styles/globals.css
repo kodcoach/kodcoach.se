@@ -42,7 +42,7 @@ input[type='search'] {
 /* to be refactored */ 
 .bg-input {
     border: 1px solid var(--color-custom-100);
-    background-color: var(--color-custom-900);
+    background-color: var(--color-custom-800);
 }
 
 .bg-custom-900 {

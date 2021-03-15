@@ -23,8 +23,7 @@ export default function Select({
     }),
     control: (provided) => ({
         ...provided,
-        borderColor: '#333',
-        background: '#0d111d', 
+        background: '#0C1223',
         padding: '0',
         borderColor: '#cbd4d9',
         minHeight: '48px'
