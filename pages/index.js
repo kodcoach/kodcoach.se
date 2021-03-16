@@ -60,7 +60,7 @@ const MentorCTA = ({ name, contact, cta }) => {
         text-center text-sm text-custom-900 font-mono tracking-tight
         bg-green-400 opacity-90 hover:opacity-100
         transform scale-100 hover:scale-105"
-      >
+    >
       {text}
     </Obfuscate>
   ) : (
@@ -229,7 +229,7 @@ export default function PageIndex({ mentors }) {
           <div className="w-full lg:w-1/2 flex-none sm:flex-1">
             <input
               id="search"
-              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-input placeholder-white font-mono tracking-tight"
+              className="w-full rounded-md py-1.5 px-4 border-1 border-color-gray-500 text-white bg-custom-800 border-solid border-custom-100 border placeholder-white font-mono tracking-tight"
               type="search"
               aria-label="Sök"
               placeholder="Sök"
